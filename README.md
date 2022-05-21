@@ -1,2 +1,2 @@
 # Cpp-Learning
-Repository that accommodates my cpp earning journey.
+Repository that accommodates my cpp learning journey.
