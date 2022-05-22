@@ -21,7 +21,7 @@ int main() {
 #endif
 
 // Character manipulation
-#if 1
+#if 0
 int main() {
     char a = 'A'; // Must use '' instead of "" when making the assignment.
     char b = 65;  
@@ -42,6 +42,23 @@ int main() {
 
     cout << c <<endl;
     
+    return 0;
+}
+#endif
+
+// Comparing strings
+#if 1
+int main() {
+    // These are not references to the objects in the memory. They are the actual objects.
+    string a = "Dave"; 
+    string b = "Dave";
+    
+    // Therefore, we can compare them like this:
+    // Works only with primitive objects!!!
+    if (a == b) {
+        cout << "Dave is Dave" << endl;
+    }
+
     return 0;
 }
 #endif
