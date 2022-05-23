@@ -157,7 +157,7 @@ class Journey {
     public:
         Journey(Coordinate startIn, Coordinate endIn) // Used when the member variable has no default constructor.
             : start(startIn), end(endIn) {
-            }
+        }
 
 /*      
     This will not compile due to that cpp requires to have all objects
