@@ -55,9 +55,24 @@ class Coordinate {
         bool operator==(Coordinate other) {
             return (x == other.x && y == other.y);
         }
+
+        // Overloading arithmetic operators.
+        Coordinate operator+(Coordinate other) {
+            return Coordinate(x + other.x, y + other.y);
+        }
+
+/*      Coordinate operator+(Coordinate other) {    // Another way of writing the overloading.
+            Coordinate new_coordinate(0, 0);
+            new_coordinate.x = x + other.x;
+            new_coordinate.y = y + other.y;
+
+            return new_coordinate;
+        } 
+*/
+
 };
 
-#if 1
+#if 0
 int main() {
     Coordinate a(4, -3);
     Coordinate b = a;   // Creates another objects that copies the values of object a. Using a copy constructor.
@@ -102,7 +117,31 @@ int main() {
     Coordinate b(4, -2);
     Coordinate c(5, 2);
 
+    if (a == b) {
+        cout << "a = b" << endl;
+    }
 
+    if (a == c) {
+        cout << "a = c" << endl;
+    }
+
+    if (b == c) {
+        cout << "b = c" << endl;
+    }
+
+    return 0;
+}
+#endif
+
+// Using the overloaded arithmetic operator +.
+#if 1
+int main() {
+    Coordinate a(3, 5);
+    Coordinate b(4, 8);
+    
+    Coordinate c = a + b;
+
+    cout << "The coordinates are: " << c.getX() << ", " << c.getY() << endl;
 
     return 0;
 }
