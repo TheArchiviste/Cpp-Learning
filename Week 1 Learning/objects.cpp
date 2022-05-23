@@ -14,6 +14,9 @@ using namespace std;
         b - There can be more than one compiler, however, they need to be different in terms of intake (order, number of parameters, est.).
         c - Variables must always go through a constructor to be initialised properly.
         d - Insisting on the constructor's functionality diminishes the chances of Null Pointer Exceptions.
+
+    3 - Objects are independant of each other. When created they are not a reference to the place in memory,
+        where the object is stored. 
 */
 
 class Coordinate {
@@ -40,12 +43,12 @@ class Coordinate {
             return y;
         }
 
-        int setX(int newX) {
-            return x = newX;
+        void setX(int newX) {
+            x = newX;
         }
 
-        int setY(int newY) {
-            return y = newY;
+        void setY(int newY) {
+            y = newY;
         }
 
         // Quality operator - used for compring non-primitive objects.
@@ -54,7 +57,7 @@ class Coordinate {
         }
 };
 
-#if 0
+#if 1
 int main() {
     Coordinate a(4, -3);
     Coordinate b = a;   // Creates another objects that copies the values of object a. Using a copy constructor.
@@ -93,7 +96,7 @@ int main() {
 #endif
 
 // Comparing objects that are not primitive -> Use quality operator.
-#if 1
+#if 0
 int main() {
     Coordinate a(4, -2);
     Coordinate b(4, -2);
