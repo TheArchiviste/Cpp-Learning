@@ -54,7 +54,7 @@ int main() {
     string b = "Dave";
     
     // Therefore, we can compare them like this:
-    // Works only with primitive objects!!!
+    // Works only with primitive objects and strings!!!
     if (a == b) {
         cout << "Dave is Dave" << endl;
     }
