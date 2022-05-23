@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <string>
 
 using namespace std;
 
@@ -14,7 +12,11 @@ class Coordinate {
             : x(xIn), y(yIn) {
         }
 
-        int getX() {
+        int getX() {                // Returns a copy of x.
+            return x;
+        }
+
+        int & getXReference() {     // Returns a reference to x.
             return x;
         }
 
@@ -88,7 +90,7 @@ int main() {
     4 - Through reference we allow private variables to mutate => prone to errors
 */
 #if 0
-void moveXToZero(Coordinate & in) {     // in becomes an alias of the object, meaning just another name for the already existing object.
+void moveXToZero(Coordinate & in) {     // "in" becomes an alias of the object, meaning just another name for the already existing object.
     in.setX(0);                         // Changes will persist and will be assigned to the referenced object.
 }
 
