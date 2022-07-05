@@ -35,8 +35,6 @@ class Student {
         bool operator==(const Student & other) const {
             return (studentNumber == other.studentNumber);
         }
-
-
 };
 
 ostream & operator<<(ostream & o, const Student & toPrint) {
