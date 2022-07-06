@@ -10,10 +10,16 @@ class Student {
         string studentName;
 
     public:
-        Student(const int studentNumberIn, const string & studentNameIn)            // Makes sure the constructor does not accidentally change the member field.
+        Student(const int studentNumberIn, const string & studentNameIn)
             : studentNumber(studentNumberIn), studentName(studentNameIn) {
             
             cout << "Made a Student: " << studentName << ", " << studentNumber << endl;
+        }
+
+        Student(const Student & other)
+            : studentNumber(other.studentNumber), studentName(other.studentName) {
+
+            cout << "Copied a Student: " << studentName << ", " << studentNumber << endl; 
         }
 
         int getStudentNumber() const {
@@ -24,7 +30,7 @@ class Student {
             return studentName;
         }
 
-        void setStudentNumber(const int newStudentNumber) {     // Guarantees that we are not accidentally going to change the value of n instead of the member variable.
+        void setStudentNumber(const int newStudentNumber) {
             studentNumber = newStudentNumber;
         } 
 
@@ -34,6 +40,14 @@ class Student {
 
         bool operator==(const Student & other) const {
             return (studentNumber == other.studentNumber);
+        }
+
+        // The assignment operator being overloaded
+        Student & operator=(const Student & other) {
+            studentName = other.studentName;
+            studentNumber = other.studentNumber;
+
+            return *this;
         }
 };
 
@@ -50,6 +64,14 @@ class MathStudent {
     public:
         MathStudent(const Student & studentIn)
             : student(studentIn), marks(10) {
+
+            cout << "The student: " << student.getStudentName() << " is now Math student." << endl;
+        }
+
+        MathStudent(const MathStudent & other)
+            : student(other.student), marks(other.marks) {
+
+            cout << "Copied a MathStudent: " << student << endl;
         }
 
         void setMark( const int assignmentNumber, const double mark) {
@@ -66,7 +88,7 @@ class MathStudent {
             return sum;
         }
 
-        bool operator==(const MathStudent & other) const{       // The second const is preventing the member variables from being changed!!!
+        bool operator==(const MathStudent & other) const{
             return (student == other.student);
         }
 
@@ -90,18 +112,31 @@ ostream & operator<<(ostream & o, const MathStudent & toPrint) {
     return o;
 }
 
+#if 0
+int main() {
+    Student sally(4243531, "Sally Mich");
+    Student ivan(2343122, "Ivan Willams");
+
+    Student copyOfSally(sally);
+
+    ivan = sally;
+
+    cout << ivan.getStudentName() << ", " << ivan.getStudentNumber() << endl;
+
+    return 0;
+}
+#endif
+
 #if 1
 int main() {
-    Student sally(42, "Sally Mich");
+    Student sally(4243531, "Sally Mich");
 
-    MathStudent sally_M(sally);
-    sally_M.setMark(0, 4.7);
-    sally_M.setMark(1, 5.3);
+    MathStudent mSally(sally);
 
-    cout << "The selected student is: " << sally << endl;
+    MathStudent copyMSally(mSally);
 
-    cout << "The marks of: " << sally_M << endl;
-    
+    MathStudent copyMSally2 = mSally;
+
     return 0;
 }
 #endif

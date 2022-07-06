@@ -42,54 +42,6 @@ ostream & operator<<(ostream & o, const Student & toPrint) {
     return o;
 }
 
-class MathStudent {
-    private:
-        Student student;
-        vector<double> marks;
-    
-    public:
-        MathStudent(const Student & studentIn)
-            : student(studentIn), marks(10) {
-        }
-
-        void setMark( const int assignmentNumber, const double mark) {
-            marks[assignmentNumber] = mark;
-        }
-
-        double addMarks() const{
-            double sum = 0.0;
-
-            for (int i=0; i < marks.size(); ++i) {
-                sum += marks[i];
-            }
-
-            return sum;
-        }
-
-        bool operator==(const MathStudent & other) const{
-            return (student == other.student);
-        }
-
-        bool operator>(const MathStudent & other) const{
-            return (addMarks() > other.addMarks());
-        }
-
-        void write(ostream & o) const {
-            o << student << " [";
-
-            for (int i=0; i < marks.size(); ++i) {
-                o << " " << marks[i];
-            }
-
-            o << " ]";
-        }
-};
-
-ostream & operator<<(ostream & o, const MathStudent & toPrint) {
-    toPrint.write(o);
-    return o;
-}
-
 void printStudentName (const Student * student) {
     cout << "The student's name is: " << student->getStudentName() << endl;
 }
