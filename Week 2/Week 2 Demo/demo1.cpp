@@ -90,17 +90,71 @@ ostream & operator<<(ostream & o, const MathStudent & toPrint) {
     return o;
 }
 
-#if 1
+void printStudentName (const Student * student) {
+    cout << "The student's name is: " << student->getStudentName() << endl;
+}
+
+#if 0
 int main() {
     Student sally(4243531, "Sally Mich");
+    Student sally1(4243531, "Sally Mich");
 
-    Student * ivan = new Student(2343122, "Ivan");
+    Student * ivan = new Student(2343122, "Ivan Willams");
+    Student * ivan1 = new Student(2343122, "Ivan Willams");
 
     cout << sally << endl;
     cout << ivan << endl;       // Returns the hexadecimal representation of where it lives in memory.
     cout << *ivan << endl;
     cout << &ivan << endl;
     cout << &sally << endl;     // Prints where the object is being stored in memory.
+
+    if (sally == sally1) {
+        cout << "Sally is Sally1" << endl;
+    }
+    else {
+        cout << "Wrong!" << endl;
+    }
+
+    if (ivan == ivan1) {                    // Compares memory addresses not actual values.
+        cout << "Ivan is ivan1" << endl;
+    }
+    else {
+        cout << "Wrong!" << endl;
+    }
+
+    if (*ivan == *ivan1) {
+        cout << "Ivan is ivan1" << endl;
+    }
+    else {
+        cout << "Wrong!" << endl;
+    }
+
+    delete ivan, ivan1;
+
+    return 0;
+}
+#endif
+
+#if 0
+int main() {
+    Student sally(4243531, "Sally Mich");
+    Student * ivan = new Student(2343122, "Ivan Willams");
+
+    printStudentName(ivan);
+    printStudentName(&sally);
+    
+    delete ivan;
+
+    return 0;
+}
+#endif
+
+#if 1
+int main() {
+    for (int i = 0; i < 10000; ++i) {
+         Student * ivan = new Student(2343122, "Ivan Willams");
+         delete ivan;
+    }
 
     return 0;
 }

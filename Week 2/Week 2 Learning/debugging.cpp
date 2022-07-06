@@ -16,7 +16,7 @@ int main() {
 #if 1
 int main() {
     vector<int> nums{1,2,3,4,5};                                        // It may result in a segmentation fault = code has crashed.
-                                                                        // Using the GDB debugger - gdb ./filename - run
+                                                                        // Using the GDB debugger - gdb ./filename - run - bt for backtracking
     for(int i=0; i < 10; ++i) {
         if (nums[i] > 100) {
             cout << "Entry: " << i << " is really big number" << endl;  // If there is no crash -> Valgrin
