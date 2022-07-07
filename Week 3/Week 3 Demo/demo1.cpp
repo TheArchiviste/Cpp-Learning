@@ -1,6 +1,7 @@
 #include<iostream>
+#include<utility>
 
-#include<demo_support.h>
+#include<demo.h>
 
 using namespace std;
 
@@ -14,6 +15,10 @@ int main() {
     for (int i = 0; i < nums.size(); ++i) {
         cout << nums[i] << endl;
     }
+
+    SimpleVector<pair<int, double>> pairs(7);
+
+    pairs[0] = pair<int, double> (3, 4.2);
 
     return 0;
 }
