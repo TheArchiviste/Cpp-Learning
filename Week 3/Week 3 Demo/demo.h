@@ -8,6 +8,32 @@ class SimpleVector {
         int sVSize;
 
     public:
+        class iterator {
+            private:
+                T * currentElement;
+
+            public:
+                iterator(T * pointTo)
+                : currentElement(pointTo) {}
+
+                void operator++() {
+                    ++currentElement;
+                }
+
+                T & operator*() {
+                    return *currentElementl;
+                }
+
+                // Two iterator are the same if they point to the same pointer at a time!!!
+                bool operator==(const iterator & other) const {
+                    return currentElement == other.currentElement;
+                }
+
+                bool operator!=(const iterator & other) const {
+                    return currentElement != other.currentElement;
+                }
+        };
+
         SimpleVector(const int n) 
         : elements(new T[n]), sVSize(n) {}
 
@@ -23,6 +49,15 @@ class SimpleVector {
 
         int size() const {
             return sVSize;
+        }
+
+        iterator begin() {
+            return iterator(elements);
+        }
+
+        iterator end() {
+            return iterator(&(elements[sVSize]));
+            // return iterator(elements + sVSize);
         }
 
         // Use reference due to that we do not know what we will have in the vectro.

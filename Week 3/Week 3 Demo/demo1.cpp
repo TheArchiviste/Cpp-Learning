@@ -16,6 +16,10 @@ int main() {
         cout << nums[i] << endl;
     }
 
+    for (int someNums : nums) {
+        cout << someNums << endl;
+    }
+
     SimpleVector<pair<int, double>> pairs(7);
 
     pairs[0] = pair<int, double> (3, 4.2);
