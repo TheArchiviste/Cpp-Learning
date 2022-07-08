@@ -26,3 +26,8 @@ int main() {
     }
 }
 #endif
+
+// Valgrind -> similar to what the JVM does for Java
+// check for leaks -> valgrind --leaks-check=full ./filename
+
+// Add additional compiler checks to the compile command.
