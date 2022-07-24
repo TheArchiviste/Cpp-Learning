@@ -47,7 +47,7 @@ int main() {
 #endif
 
 // Comparing strings
-#if 1
+#if 0
 int main() {
     // These are not references to the objects in the memory. They are the actual objects.
     string a = "Dave"; 
@@ -58,6 +58,16 @@ int main() {
     if (a == b) {
         cout << "Dave is Dave" << endl;
     }
+
+    return 0;
+}
+#endif
+
+#if 1
+int main() {
+    string a = "1234";
+
+    cout << stoi(a) << endl;
 
     return 0;
 }

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#if 1
+#if 0
 int addNums(const vector<int> & toAdd) {
     int answer = 0;
 
@@ -21,7 +21,7 @@ int main() {
 }
 #endif
 
-#if 0
+#if 1
 int main() {
     vector<int> nums {1,2,3,4,5};
 

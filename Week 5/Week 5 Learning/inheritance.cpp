@@ -39,7 +39,6 @@ class Bikes : public Coordinate {
         : Coordinate(xIn, yIn), howMany(howManyIn) {}
 
         // Making it a virtual function => In the end it will use the
-        // 
         virtual void printDetails() override {
             Coordinate :: printDetails();
             cout << ": " << howMany << " bikes." << endl;

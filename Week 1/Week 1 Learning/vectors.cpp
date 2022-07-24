@@ -10,13 +10,15 @@ using namespace std;
 
 // Normal vector
 
-#if 0
+#if 1
 int main() {
     vector<int> numbers(10);
     for (int i=0; i < 10; ++i) {
         numbers[i] = i; // numbers[i] accesses an element of the vector at position i.
         cout << i << endl;
     }
+
+    cout << numbers.back() << endl;
 
     return 0;
 }
@@ -57,7 +59,7 @@ int main() {
 }
 #endif
 
-#if 1
+#if 0
 int main() {
     vector<vector<int>> nums 
     {
