@@ -22,7 +22,6 @@ C++ is a powerful, high-performance programming language widely used in software
 ## 🛠️ Projects & Exercises
 As I progress, I will be working on the following:
 - ✅ Data Structures Implementation
---
 
 Happy coding! 😊
 
