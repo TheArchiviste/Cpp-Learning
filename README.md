@@ -20,9 +20,4 @@ C++ is a powerful, high-performance programming language widely used in software
 - [x] STL (Standard Template Library)
 
 ## 🛠️ Projects & Exercises
-As I progress, I will be working on the following:
 - ✅ Data Structures Implementation
-
-Happy coding! 😊
-
-
